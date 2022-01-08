@@ -101,17 +101,21 @@ function solve(){
     let p  = "output";
     const op = document.getElementById("op");
     if(k=="invalid input"){
-        op.style.display = "block";
-        op.innerHTML = k;
+        alert("invalid input");
     }else {
-        let pp = solveAct();        
-    }
-        for (let i = 0; i < b.length; i++) {
-            for (let j = 0; j < b[0].length; j++) {
-                let k = "opr" +i+"c"+j;
-                document.getElementById(k).innerHTML = b[i][j];
+        let pp = solveAct();      
+        if(pp==true){
+            for (let i = 0; i < b.length; i++) {
+                for (let j = 0; j < b[0].length; j++) {
+                    let k = "opr" +i+"c"+j;
+                    document.getElementById(k).innerHTML = b[i][j];
+                }
             }
+        }else {
+            alert("invalid input");
         }
+    }
+        
     
 
 }
