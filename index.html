@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Solver</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+        <div class="sudoku container my-5" style="background-color: aqua;">
+            <form>
+              <div class="table-responsive">
+                  <table class="my-2" style="width: 100%;justify-content: center;text-align: center;">
+                        <tr>
+                            <td><input name="r0c0" id="r0c0" value="5"></td>
+                            <td><input name="r0c1" id="r0c1" value="3"></td>
+                            <td><input name="r0c2" id="r0c2"></td>
+                            <td><input name="r0c3" id="r0c3"></td>
+                            <td><input name="r0c4" id="r0c4" value="7"></td>
+                            <td><input name="r0c5" id="r0c5"></td>
+                            <td><input name="r0c6" id="r0c6"></td>
+                            <td><input name="r0c7" id="r0c7"></td>
+                            <td><input name="r0c8" id="r0c8"></td>
+                        </tr>
+                        <tr>
+                            <td><input name="r1c0" id="r1c0" value="6"></td>
+                            <td><input name="r1c1" id="r1c1"></td>
+                            <td><input name="r1c2" id="r1c2"></td>
+                            <td><input name="r1c3" id="r1c3" value="1"></td>
+                            <td><input name="r1c4" id="r1c4" value="9"></td>
+                            <td><input name="r1c5" id="r1c5" value="5"></td>
+                            <td><input name="r1c6" id="r1c6"></td>
+                            <td><input name="r1c7" id="r1c7"></td>
+                            <td><input name="r1c8" id="r1c8"></td>
+                        </tr>
+                        <tr>
+                            <td><input name="r2c0" id="r2c0"></td>
+                            <td><input name="r2c1" id="r2c1" value="9"></td>
+                            <td><input name="r2c2" id="r2c2" value="8"></td>
+                            <td><input name="r2c3" id="r2c3"></td>
+                            <td><input name="r2c4" id="r2c4"></td>
+                            <td><input name="r2c5" id="r2c5"></td>
+                            <td><input name="r2c6" id="r2c6"></td>
+                            <td><input name="r2c7" id="r2c7" value="6"></td>
+                            <td><input name="r2c8" id="r2c8"></td>
+                        </tr>
+                        <tr>
+                            <td><input name="r3c0" id="r3c0" value="8"></td>
+                            <td><input name="r3c1" id="r3c1"></td>
+                            <td><input name="r3c2" id="r3c2"></td>
+                            <td><input name="r3c3" id="r3c3"></td>
+                            <td><input name="r3c4" id="r3c4" value="6"></td>
+                            <td><input name="r3c5" id="r3c5"></td>
+                            <td><input name="r3c6" id="r3c6"></td>
+                            <td><input name="r3c7" id="r3c7"></td>
+                            <td><input name="r3c8" id="r3c8" value="3"></td>
+                        </tr>
+                        <tr>
+                            <td><input name="r4c0" id="r4c0" value="4"></td>
+                            <td><input name="r4c1" id="r4c1"></td>
+                            <td><input name="r4c2" id="r4c2"></td>
+                            <td><input name="r4c3" id="r4c3" value="8"></td>
+                            <td><input name="r4c4" id="r4c4"></td>
+                            <td><input name="r4c5" id="r4c5" value="3"></td>
+                            <td><input name="r4c6" id="r4c6"></td>
+                            <td><input name="r4c7" id="r4c7"></td>
+                            <td><input name="r4c8" id="r4c8" value="1"></td>
+                        </tr>
+                        <tr>
+                            <td><input name="r5c0" id="r5c0" value="7"></td>
+                            <td><input name="r5c1" id="r5c1"></td>
+                            <td><input name="r5c2" id="r5c2"></td>
+                            <td><input name="r5c3" id="r5c3"></td>
+                            <td><input name="r5c4" id="r5c4" value="2"></td>
+                            <td><input name="r5c5" id="r5c5"></td>
+                            <td><input name="r5c6" id="r5c6"></td>
+                            <td><input name="r5c7" id="r5c7"></td>
+                            <td><input name="r5c8" id="r5c8" value="6"></td>
+                        </tr>
+                        <tr>
+                            <td><input name="r6c0" id="r6c0"></td>
+                            <td><input name="r6c1" id="r6c1" value="6"></td>
+                            <td><input name="r6c2" id="r6c2"></td>
+                            <td><input name="r6c3" id="r6c3"></td>
+                            <td><input name="r6c4" id="r6c4"></td>
+                            <td><input name="r6c5" id="r6c5"></td>
+                            <td><input name="r6c6" id="r6c6" value="2"></td>
+                            <td><input name="r6c7" id="r6c7" value="8"></td>
+                            <td><input name="r6c8" id="r6c8"></td>
+                        </tr>
+                        <tr>
+                            <td><input name="r7c0" id="r7c0"></td>
+                            <td><input name="r7c1" id="r7c1"></td>
+                            <td><input name="r7c2" id="r7c2"></td>
+                            <td><input name="r7c3" id="r7c3" value="4"></td>
+                            <td><input name="r7c4" id="r7c4" value="1"></td>
+                            <td><input name="r7c5" id="r7c5" value="9"></td>
+                            <td><input name="r7c6" id="r7c6"></td>
+                            <td><input name="r7c7" id="r7c7"></td>
+                            <td><input name="r7c8" id="r7c8" value="5"></td>
+                        </tr>
+                        <tr>
+                            <td><input name="r8c0" id="r8c0"></td>
+                            <td><input name="r8c1" id="r8c1"></td>
+                            <td><input name="r8c2" id="r8c2"></td>
+                            <td><input name="r8c3" id="r8c3"></td>
+                            <td><input name="r8c4" id="r8c4" value="8"></td>
+                            <td><input name="r8c5" id="r8c5"></td>
+                            <td><input name="r8c6" id="r8c6"></td>
+                            <td><input name="r8c7" id="r8c7"  value="7"></td>
+                            <td><input name="r8c8" id="r8c8" value="9"></td>
+                        </tr>
+                        
+                  </table>
+                  
+              </div>     
+            </form>
+            <div style="text-align:center;" class="mb-3 my-2">
+            <button type="submit" class="btn-primary" id="mbtn">Solve</button>
+            </div>
+        </div>
+        <div class="output container my-5" style="background-color: aqua;" id="op">
+              <div class="table-responsive ">
+                  <table class="my-2" style="width: 100%;justify-content: center;text-align: center;" id="tbop">
+                        <tr>
+                            <td id="opr0c0"></td>
+                            <td id="opr0c1"></td>
+                            <td id="opr0c2"></td>
+                            <td id="opr0c3"></td>
+                            <td id="opr0c4"></td>
+                            <td id="opr0c5"></td>
+                            <td id="opr0c6"></td>
+                            <td id="opr0c7"></td>
+                            <td id="opr0c8"></td>
+                        </tr>
+                        <tr>
+                            <td id="opr1c0"></td>
+                            <td id="opr1c1"></td>
+                            <td id="opr1c2"></td>
+                            <td id="opr1c3"></td>
+                            <td id="opr1c4"></td>
+                            <td id="opr1c5"></td>
+                            <td id="opr1c6"></td>
+                            <td id="opr1c7"></td>
+                            <td id="opr1c8"></td>
+                        </tr>
+                        <tr>
+                            <td id="opr2c0"></td>
+                            <td id="opr2c1"></td>
+                            <td id="opr2c2"></td>
+                            <td id="opr2c3"></td>
+                            <td id="opr2c4"></td>
+                            <td id="opr2c5"></td>
+                            <td id="opr2c6"></td>
+                            <td id="opr2c7"></td>
+                            <td id="opr2c8"></td>
+                        </tr>
+                        <tr>
+                            <td id="opr3c0"></td>
+                            <td id="opr3c1"></td>
+                            <td id="opr3c2"></td>
+                            <td id="opr3c3"></td>
+                            <td id="opr3c4"></td>
+                            <td id="opr3c5"></td>
+                            <td id="opr3c6"></td>
+                            <td id="opr3c7"></td>
+                            <td id="opr3c8"></td>
+                        </tr>
+                        <tr>
+                            <td id="opr4c0"></td>
+                            <td id="opr4c1"></td>
+                            <td id="opr4c2"></td>
+                            <td id="opr4c3"></td>
+                            <td id="opr4c4"></td>
+                            <td id="opr4c5"></td>
+                            <td id="opr4c6"></td>
+                            <td id="opr4c7"></td>
+                            <td id="opr4c8"></td>
+                        </tr>
+                        <tr>
+                            <td id="opr5c0"></td>
+                            <td id="opr5c1"></td>
+                            <td id="opr5c2"></td>
+                            <td id="opr5c3"></td>
+                            <td id="opr5c4"></td>
+                            <td id="opr5c5"></td>
+                            <td id="opr5c6"></td>
+                            <td id="opr5c7"></td>
+                            <td id="opr5c8"></td>
+                        </tr>
+                        <tr>
+                            <td id="opr6c0"></td>
+                            <td id="opr6c1"></td>
+                            <td id="opr6c2"></td>
+                            <td id="opr6c3"></td>
+                            <td id="opr6c4"></td>
+                            <td id="opr6c5"></td>
+                            <td id="opr6c6"></td>
+                            <td id="opr6c7"></td>
+                            <td id="opr6c8"></td>
+                        </tr>
+                        <tr>
+                            <td id="opr7c0"></td>
+                            <td id="opr7c1"></td>
+                            <td id="opr7c2"></td>
+                            <td id="opr7c3"></td>
+                            <td id="opr7c4"></td>
+                            <td id="opr7c5"></td>
+                            <td id="opr7c6"></td>
+                            <td id="opr7c7"></td>
+                            <td id="opr7c8"></td>
+                        </tr>
+                        <tr>
+                            <td id="opr8c0"></td>
+                            <td id="opr8c1"></td>
+                            <td id="opr8c2"></td>
+                            <td id="opr8c3"></td>
+                            <td id="opr8c4"></td>
+                            <td id="opr8c5"></td>
+                            <td id="opr8c6"></td>
+                            <td id="opr8c7"></td>
+                            <td id="opr8c8"></td>
+                        </tr>
+                        
+                  </table>
+              </div>  
+        </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
+</html>

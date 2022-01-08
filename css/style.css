@@ -1,0 +1,11 @@
+body {
+    background-color: greenyellow;
+}
+td {
+    border: 1px solid black;
+    width: 70px;
+}
+td>input {
+    border: 1px solid black;
+    width: 50px;
+}
